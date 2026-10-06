@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silas Web Design | Websites for local trade businesses</title>
+<meta name="description" content="Simple, clear websites for roofers, plumbers, electricians and other local trades. See a free preview with your business name on it before you decide anything.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23FFD21F'/%3E%3Cpath d='M9 22h14M9 22v-6M14 22v-3M19 22v-6M23 22v-3' stroke='%231C2024' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --tape: #FFD21F;        /* tape-measure yellow */
+  --tape-deep: #E9B800;
+  --ink: #1C2024;         /* blade markings */
+  --soft: #555D66;
+  --line: #D9DDE1;
+  --paper: #FFFFFF;
+  --slab: #F0F2F4;        /* poured-concrete grey */
+  --font: "Archivo", "Arial Nova", Arial, "Helvetica Neue", sans-serif;
+  --wrap: 1120px;
+  --gutter: clamp(20px, 5vw, 40px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 88px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font); font-size: 1.0625rem; line-height: 1.6;
+}
+h1, h2, h3 { margin: 0; font-weight: 800; font-stretch: 118%; line-height: 1.04; letter-spacing: -0.01em; }
+h2 { font-size: clamp(1.9rem, 4vw, 2.75rem); }
+h3 { font-size: 1.25rem; font-stretch: 108%; line-height: 1.2; letter-spacing: 0; }
+p { margin: 0; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gutter); }
+.lede { color: var(--soft); font-size: 1.125rem; max-width: 58ch; margin-top: 14px; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 50px; padding: 12px 22px; border-radius: 8px;
+  font: 700 1.0625rem/1.1 var(--font); text-decoration: none; white-space: nowrap;
+  border: 2px solid var(--ink);
+}
+.btn-main { background: var(--tape); color: var(--ink); }
+.btn-main:hover { background: var(--tape-deep); }
+.btn-plain { background: transparent; color: var(--ink); }
+.btn-plain:hover { background: var(--slab); }
+
+/* header */
+.top { position: sticky; top: 0; z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; gap: 12px; min-height: 68px; }
+.word { font-weight: 800; font-stretch: 118%; font-size: 1.0625rem; white-space: nowrap; text-decoration: none; letter-spacing: -0.01em; }
+@media (min-width: 520px) { .word { font-size: 1.25rem; } }
+.nav { display: none; margin-left: auto; gap: 28px; }
+.nav a { text-decoration: none; font-weight: 500; padding-block: 8px; }
+.nav a:hover { text-decoration: underline; text-underline-offset: 5px; }
+.top .btn { margin-left: auto; min-height: 44px; padding: 8px 12px; font-size: .9375rem; }
+@media (min-width: 520px) { .top .wrap { gap: 24px; } .top .btn { padding: 8px 16px; font-size: 1rem; } }
+@media (min-width: 860px) { .nav { display: flex; } .top .btn { margin-left: 0; } }
+
+/* hero */
+.hero .wrap { display: grid; gap: 44px; padding-block: clamp(44px, 7vw, 92px); align-items: center; }
+.hero h1 { font-size: clamp(2.35rem, 5.6vw, 4.1rem); max-width: 15ch; }
+.hero-sub { font-size: 1.1875rem; color: var(--soft); max-width: 46ch; margin-top: 22px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.hero-note { margin-top: 16px; color: var(--soft); font-size: .9375rem; }
+@media (min-width: 940px) { .hero .wrap { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: 56px; } }
+
+/* a small picture of a finished site, drawn in HTML */
+.shot { border: 2px solid var(--ink); border-radius: 12px; overflow: hidden; background: #25313B; color: #fff; }
+.shot-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; background: var(--paper); border-bottom: 2px solid var(--ink); }
+.shot-bar i { width: 10px; height: 10px; border-radius: 50%; background: var(--line); }
+.shot-bar span { margin-left: 8px; flex: 1; font-size: .8125rem; color: var(--soft); background: var(--slab); border-radius: 6px; padding: 4px 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shot-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 18px; background: #fff; color: var(--ink); font-weight: 800; font-stretch: 100%; }
+.shot-head b { background: #F26B21; border-radius: 6px; padding: 6px 12px; font-size: .8125rem; white-space: nowrap; }
+.shot-body { padding: 26px 18px 30px; }
+.shot-body strong { display: block; font-size: clamp(1.5rem, 3.4vw, 2.1rem); font-weight: 800; line-height: 1.05; max-width: 14ch; }
+.shot-body p { color: rgba(255,255,255,.82); font-size: .9375rem; margin-top: 12px; max-width: 34ch; }
+.shot-body em { display: inline-block; margin-top: 18px; background: #F26B21; color: #15171A; font-style: normal; font-weight: 700; font-size: .9375rem; border-radius: 6px; padding: 9px 14px; }
+.shot-strip { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px 12px; padding: 12px 18px; background: #F26B21; color: #15171A; font-weight: 700; font-size: .8125rem; }
+
+/* sections */
+.section { padding-block: clamp(56px, 8vw, 100px); }
+.section-slab { background: var(--slab); }
+
+/* trade picker */
+.swatches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 36px; }
+@media (min-width: 620px) { .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 940px) { .swatches { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; } }
+.swatch {
+  display: flex; flex-direction: column; justify-content: space-between; gap: 22px;
+  min-height: 118px; padding: 16px 16px 14px;
+  background: var(--g); color: #fff; text-decoration: none;
+  border-radius: 8px; border-bottom: 10px solid var(--a);
+}
+.swatch-name { font-weight: 800; font-stretch: 108%; font-size: 1.1875rem; line-height: 1.15; }
+.swatch-go { font-size: .9375rem; color: rgba(255,255,255,.85); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--a); text-decoration-thickness: 2px; }
+.swatch:hover .swatch-go, .swatch:focus-visible .swatch-go { color: #fff; }
+.swatch:focus-visible { outline-color: var(--ink); }
+
+/* what you get */
+.gets { display: grid; gap: 0 56px; margin-top: 36px; }
+.gets li { border-top: 1px solid var(--line); padding-block: 22px; }
+.gets p { color: var(--soft); margin-top: 6px; max-width: 46ch; }
+@media (min-width: 760px) { .gets { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* how it works: three marks along a tape measure */
+.steps { display: grid; gap: 28px; margin-top: 40px; }
+.step-tape {
+  position: relative; height: 62px; background-color: var(--tape);
+  background-image:
+    linear-gradient(to right, var(--ink) 2px, transparent 2px),
+    linear-gradient(to right, var(--ink) 1px, transparent 1px);
+  background-size: 64px 26px, 8px 12px;
+  background-repeat: repeat-x, repeat-x;
+  background-position: 0 0, 0 0;
+  border-block: 2px solid var(--ink);
+}
+.step-tape span {
+  position: absolute; left: 12px; bottom: 2px;
+  font-weight: 800; font-stretch: 100%; font-size: 1.75rem; line-height: 1;
+}
+.step h3 { margin-top: 18px; }
+.step p { color: var(--soft); margin-top: 8px; max-width: 36ch; padding-right: 20px; }
+@media (min-width: 820px) {
+  .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; }
+  .step:first-child .step-tape { border-left: 2px solid var(--ink); border-radius: 6px 0 0 6px; }
+  .step:last-child .step-tape { border-right: 2px solid var(--ink); border-radius: 0 6px 6px 0; }
+}
+
+/* about + questions */
+.split { display: grid; gap: 52px; }
+@media (min-width: 900px) { .split { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 80px; } }
+.about p { margin-top: 18px; max-width: 48ch; }
+.about p:first-of-type { font-size: 1.1875rem; }
+.faq { margin-top: 22px; border-bottom: 1px solid var(--line); }
+.faq details { border-top: 1px solid var(--line); }
+.faq summary { cursor: pointer; list-style: none; position: relative; padding: 18px 40px 18px 0; font-weight: 700; font-stretch: 108%; font-size: 1.125rem; line-height: 1.25; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 6px; top: 12px; font-weight: 400; font-size: 1.75rem; }
+.faq details[open] summary::after { content: "\2212"; }
+.faq details p { color: var(--soft); padding: 0 40px 20px 0; max-width: 60ch; }
+
+/* closing band */
+.close { background: var(--tape); border-block: 2px solid var(--ink); }
+.close .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 28px; padding-block: clamp(44px, 6vw, 72px); }
+.close h2 { max-width: 18ch; }
+.close p { margin-top: 12px; max-width: 46ch; }
+.close .btn-main { background: var(--ink); color: #fff; }
+.close .btn-main:hover { background: #000; }
+.close-mail { display: block; margin-top: 12px; font-weight: 500; word-break: break-all; }
+
+.foot { padding-block: 30px; color: var(--soft); font-size: .9375rem; }
+.foot .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="word" href="#top">Silas Web Design</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#samples">Samples</a>
+      <a href="#included">What you get</a>
+      <a href="#steps">How it works</a>
+      <a href="#questions">Questions</a>
+    </nav>
+    <a class="btn btn-main" href="mailto:sjp@silaswebdesign.com?subject=Free%20website%20preview&amp;body=Business%20name%3A%0ATrade%3A%0ATown%3A%0ABest%20phone%20number%3A%0A%0AAnything%20else%20I%20should%20know%3A%0A">Get a free preview</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Websites for trade businesses that don't have one yet</h1>
+        <p class="hero-sub">I build simple, clear websites for roofers, plumbers, electricians and other local trades, so the people searching for what you do can find you and call.</p>
+        <div class="hero-actions">
+          <a class="btn btn-main" href="mailto:sjp@silaswebdesign.com?subject=Free%20website%20preview&amp;body=Business%20name%3A%0ATrade%3A%0ATown%3A%0ABest%20phone%20number%3A%0A%0AAnything%20else%20I%20should%20know%3A%0A">Get a free preview</a>
+          <a class="btn btn-plain" href="#samples">See a sample for your trade</a>
+        </div>
+        <p class="hero-note">The preview is free and there's no obligation.</p>
+      </div>
+
+      <div class="shot" role="img" aria-label="A sample roofing website with a headline, a call button and a free estimate button">
+        <div class="shot-bar"><i></i><i></i><i></i><span>yourbusiness.com</span></div>
+        <div class="shot-head"><span>Your Business Name</span><b>Call now</b></div>
+        <div class="shot-body">
+          <strong>A roof you won't have to think about again</strong>
+          <p>Repairs, replacements and storm damage work, done by a local crew that shows up on time.</p>
+          <em>Get a free estimate</em>
+        </div>
+        <div class="shot-strip"><span>Licensed and insured</span><span>Free written estimates</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-slab" id="samples">
+    <div class="wrap">
+      <h2>See what yours could look like</h2>
+      <p class="lede">Pick your trade. A full sample site opens in a new tab, ready for your name, your photos and your phone number.</p>
+      <ul class="swatches">
+        <li><a class="swatch" style="--g:#25313B;--a:#F26B21" href="https://demo.silaswebdesign.com/?trade=roofing" target="_blank" rel="noopener"><span class="swatch-name">Roofing</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#12355B;--a:#F0633A" href="https://demo.silaswebdesign.com/?trade=hvac" target="_blank" rel="noopener"><span class="swatch-name">Heating and cooling</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#0F4C81;--a:#E8923F" href="https://demo.silaswebdesign.com/?trade=plumbing" target="_blank" rel="noopener"><span class="swatch-name">Plumbing</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#1D1D22;--a:#FFC400" href="https://demo.silaswebdesign.com/?trade=electrical" target="_blank" rel="noopener"><span class="swatch-name">Electrical</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#23423A;--a:#D9AE52" href="https://demo.silaswebdesign.com/?trade=remodeling" target="_blank" rel="noopener"><span class="swatch-name">Remodeling</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#3A3F45;--a:#F2A900" href="https://demo.silaswebdesign.com/?trade=concrete" target="_blank" rel="noopener"><span class="swatch-name">Concrete</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#2E4A2B;--a:#E0984F" href="https://demo.silaswebdesign.com/?trade=fence" target="_blank" rel="noopener"><span class="swatch-name">Fencing</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#4A2F23;--a:#E6A23C" href="https://demo.silaswebdesign.com/?trade=deck" target="_blank" rel="noopener"><span class="swatch-name">Decks</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#34506B;--a:#F2C14E" href="https://demo.silaswebdesign.com/?trade=siding" target="_blank" rel="noopener"><span class="swatch-name">Siding</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#3B2A22;--a:#D8AA68" href="https://demo.silaswebdesign.com/?trade=flooring" target="_blank" rel="noopener"><span class="swatch-name">Flooring</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#6E2A20;--a:#E6D0A6" href="https://demo.silaswebdesign.com/?trade=masonry" target="_blank" rel="noopener"><span class="swatch-name">Masonry</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#2F3A45;--a:#EA7B48" href="https://demo.silaswebdesign.com/?trade=foundation" target="_blank" rel="noopener"><span class="swatch-name">Foundation repair</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#232527;--a:#F4C20D" href="https://demo.silaswebdesign.com/?trade=paving" target="_blank" rel="noopener"><span class="swatch-name">Paving</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#0E5A6B;--a:#FFB23F" href="https://demo.silaswebdesign.com/?trade=waterdamage" target="_blank" rel="noopener"><span class="swatch-name">Water damage restoration</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#2B3A4A;--a:#F4645A" href="https://demo.silaswebdesign.com/?trade=garagedoor" target="_blank" rel="noopener"><span class="swatch-name">Garage doors</span><span class="swatch-go">View sample</span></a></li>
+        <li><a class="swatch" style="--g:#1F4D2E;--a:#B9DC4E" href="https://demo.silaswebdesign.com/?trade=tree" target="_blank" rel="noopener"><span class="swatch-name">Tree service</span><span class="swatch-go">View sample</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="included">
+    <div class="wrap">
+      <h2>What you get</h2>
+      <ul class="gets">
+        <li><h3>Your services, explained plainly</h3><p>Each service gets a short, clear description, so customers know you do the job they need.</p></li>
+        <li><h3>Photos of your work</h3><p>Finished jobs and before-and-afters, front and center. Phone photos are fine.</p></li>
+        <li><h3>A phone number people can tap</h3><p>On a phone, one tap calls you. No hunting for the number.</p></li>
+        <li><h3>A quote request form</h3><p>Customers leave their name, number and what they need, and it comes straight to you.</p></li>
+        <li><h3>Built for phones first</h3><p>Most people will find you on their phone, so the site is designed to read well there.</p></li>
+        <li><h3>Your own web address</h3><p>A proper address like yourbusiness.com that can go on your truck, cards and invoices.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-slab" id="steps">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li class="step"><div class="step-tape" aria-hidden="true"><span>1</span></div><h3>You get a free preview</h3><p>I build a sample site with your business name on it. It costs you nothing to look.</p></li>
+        <li class="step"><div class="step-tape" aria-hidden="true"><span>2</span></div><h3>You tell me what to change</h3><p>Send your services, photos and wording by email. I make it yours.</p></li>
+        <li class="step"><div class="step-tape" aria-hidden="true"><span>3</span></div><h3>Your site goes live</h3><p>Once you're happy with it, it goes up at your own web address.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="questions">
+    <div class="wrap split">
+      <div class="about">
+        <h2>Who builds it</h2>
+        <p>I'm Silas, and I'm based in Minnesota. I build websites for local trade businesses.</p>
+        <p>Most owners I talk to are good at their trade and booked solid, and a website keeps sliding down the list. So I do the first step for free: I build a preview with your business name on it, and you decide from there.</p>
+      </div>
+      <div>
+        <h2>Common questions</h2>
+        <div class="faq">
+          <details><summary>What does it cost?</summary><p>It depends on what you need. I'll give you a clear price before any work starts, and the preview is free either way.</p></details>
+          <details><summary>I'm not a computer person. Is that a problem?</summary><p>No. You send me your services, a few photos and your phone number, and I handle the rest.</p></details>
+          <details><summary>Do I need photos?</summary><p>Photos of your own jobs work best, even ones taken on your phone. If you don't have any yet, they can be added later.</p></details>
+          <details><summary>What if I don't like the preview?</summary><p>Then you owe nothing and that's the end of it. There's no obligation.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="close" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Want to see your business on a site like this?</h2>
+        <p>Email me your business name, trade and town, and I'll send back a free preview.</p>
+      </div>
+      <div>
+        <a class="btn btn-main" href="mailto:sjp@silaswebdesign.com?subject=Free%20website%20preview&amp;body=Business%20name%3A%0ATrade%3A%0ATown%3A%0ABest%20phone%20number%3A%0A%0AAnything%20else%20I%20should%20know%3A%0A">Email me for a free preview</a>
+        <a class="close-mail" href="mailto:sjp@silaswebdesign.com">sjp@silaswebdesign.com</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>Silas Web Design, Minnesota</span>
+    <span>&copy; 2026 Silas Web Design</span>
+  </div>
+</footer>
+
+</body>
+</html>
